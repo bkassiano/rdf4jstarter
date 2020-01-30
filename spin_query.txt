@@ -1,0 +1,32 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX ho: <http://www.semanticweb.org/kass/ontologies/2020/0/home-activities-ontology#>
+DELETE {?a2 ho:act_start_time ?st2 .}
+INSERT {?a2 ho:act_start_time ?et1 .}
+SELECT ?a1 ?a2
+	WHERE { ?a1 rdf:type ho:Activity .
+		?a1 ho:act_end_time ?et1 .
+		?a1 ho:act_start_time ?st1 .
+		?a2 rdf:type ho:Activity .
+		?a2 ho:act_start_time ?st2 .
+		FILTER (?st2 <= ?et1 && ?a1!=?a2 && ?st1<=?st2)}
+
+spin:rule [
+                a sp:Modify ;
+                  sp:text """PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+                             PREFIX owl: <http://www.w3.org/2002/07/owl#>
+                             PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+                             PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+                             PREFIX ho: <http://www.semanticweb.org/kass/ontologies/2020/0/home-activities-ontology#>
+                             DELETE {?a2 ho:act_start_time ?st2 .}
+                             INSERT {?a2 ho:act_start_time ?et1 .}
+                             SELECT ?a1 ?a2
+	                     WHERE { ?a1 rdf:type ho:Activity .
+		                     ?a1 ho:act_end_time ?et1 .
+		                     ?a1 ho:act_start_time ?st1 .
+		                     ?a2 rdf:type ho:Activity .
+		                     ?a2 ho:act_start_time ?st2 .
+		                     FILTER (?st2 <= ?et1 && ?a1!=?a2 && ?st1<=?st2)} }"""
+              ] .
