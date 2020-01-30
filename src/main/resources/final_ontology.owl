@@ -1,0 +1,516 @@
+@prefix : <http://www.semanticweb.org/kass/ontologies/2020/0/home-activities-ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix home-activities-ontology: <http://www.semanticweb.org/kass/ontologies/2020/0/home-activities-ontology#> .
+@base <http://www.semanticweb.org/kass/ontologies/2020/0/home-activities-ontology> .
+
+<http://www.semanticweb.org/kass/ontologies/2020/0/home-activities-ontology> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/kass/ontologies/2020/0/home-activities-ontology#has_action
+home-activities-ontology:has_action rdf:type owl:ObjectProperty ;
+                                    rdfs:subPropertyOf home-activities-ontology:has_obs_content ;
+                                    rdfs:domain home-activities-ontology:Observation ;
+                                    rdfs:range home-activities-ontology:Action .
+
+
+###  http://www.semanticweb.org/kass/ontologies/2020/0/home-activities-ontology#has_object
+home-activities-ontology:has_object rdf:type owl:ObjectProperty ;
+                                    rdfs:subPropertyOf home-activities-ontology:has_obs_content ;
+                                    rdfs:domain home-activities-ontology:Observation ;
+                                    rdfs:range home-activities-ontology:House_Object .
+
+
+###  http://www.semanticweb.org/kass/ontologies/2020/0/home-activities-ontology#has_obs_content
+home-activities-ontology:has_obs_content rdf:type owl:ObjectProperty ;
+                                         rdfs:domain home-activities-ontology:Observation ;
+                                         rdfs:range home-activities-ontology:Content .
+
+
+###  http://www.semanticweb.org/kass/ontologies/2020/0/home-activities-ontology#has_zone
+home-activities-ontology:has_zone rdf:type owl:ObjectProperty ;
+                                  rdfs:subPropertyOf home-activities-ontology:has_obs_content ;
+                                  rdfs:domain home-activities-ontology:Observation ;
+                                  rdfs:range home-activities-ontology:House_Zone .
+
+
+###  http://www.semanticweb.org/kass/ontologies/2020/0/home-activities-ontology#includes_obs
+home-activities-ontology:includes_obs rdf:type owl:ObjectProperty ;
+                                      rdfs:domain home-activities-ontology:Activity ;
+                                      rdfs:range home-activities-ontology:Observation .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/kass/ontologies/2020/0/home-activities-ontology#act_content
+home-activities-ontology:act_content rdf:type owl:DatatypeProperty ;
+                                     rdfs:domain home-activities-ontology:Activity ;
+                                     rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/kass/ontologies/2020/0/home-activities-ontology#act_end_time
+home-activities-ontology:act_end_time rdf:type owl:DatatypeProperty ;
+                                      rdfs:domain home-activities-ontology:Activity ;
+                                      rdfs:range xsd:dateTimeStamp .
+
+
+###  http://www.semanticweb.org/kass/ontologies/2020/0/home-activities-ontology#act_start_time
+home-activities-ontology:act_start_time rdf:type owl:DatatypeProperty ;
+                                        rdfs:domain home-activities-ontology:Activity ;
+                                        rdfs:range xsd:dateTimeStamp .
+
+
+###  http://www.semanticweb.org/kass/ontologies/2020/0/home-activities-ontology#obs_content
+home-activities-ontology:obs_content rdf:type owl:DatatypeProperty ;
+                                     rdfs:domain home-activities-ontology:Observation ;
+                                     rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/kass/ontologies/2020/0/home-activities-ontology#obs_end_time
+home-activities-ontology:obs_end_time rdf:type owl:DatatypeProperty ;
+                                      rdfs:domain home-activities-ontology:Observation ;
+                                      rdfs:range xsd:dateTime .
+
+
+###  http://www.semanticweb.org/kass/ontologies/2020/0/home-activities-ontology#obs_start_time
+home-activities-ontology:obs_start_time rdf:type owl:DatatypeProperty ;
+                                        rdfs:domain home-activities-ontology:Observation ;
+                                        rdfs:range xsd:dateTime .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/kass/ontologies/2020/0/home-activities-ontology#Action
+home-activities-ontology:Action rdf:type owl:Class ;
+                                rdfs:subClassOf home-activities-ontology:Content .
+
+
+###  http://www.semanticweb.org/kass/ontologies/2020/0/home-activities-ontology#Activity
+home-activities-ontology:Activity rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/kass/ontologies/2020/0/home-activities-ontology#Basket
+home-activities-ontology:Basket rdf:type owl:Class ;
+                                rdfs:subClassOf home-activities-ontology:Prep_Drugbox_Object .
+
+
+###  http://www.semanticweb.org/kass/ontologies/2020/0/home-activities-ontology#Bend
+home-activities-ontology:Bend rdf:type owl:Class ;
+                              rdfs:subClassOf home-activities-ontology:Prep_Drugbox_Action .
+
+
+###  http://www.semanticweb.org/kass/ontologies/2020/0/home-activities-ontology#Content
+home-activities-ontology:Content rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/kass/ontologies/2020/0/home-activities-ontology#Cup
+home-activities-ontology:Cup rdf:type owl:Class ;
+                             rdfs:subClassOf home-activities-ontology:Drink_Tea_Object .
+
+
+###  http://www.semanticweb.org/kass/ontologies/2020/0/home-activities-ontology#Drink_Tea
+home-activities-ontology:Drink_Tea rdf:type owl:Class ;
+                                   rdfs:subClassOf home-activities-ontology:Activity .
+
+
+###  http://www.semanticweb.org/kass/ontologies/2020/0/home-activities-ontology#Drink_Tea_Object
+home-activities-ontology:Drink_Tea_Object rdf:type owl:Class ;
+                                          rdfs:subClassOf home-activities-ontology:House_Object .
+
+
+###  http://www.semanticweb.org/kass/ontologies/2020/0/home-activities-ontology#House_Object
+home-activities-ontology:House_Object rdf:type owl:Class ;
+                                      rdfs:subClassOf home-activities-ontology:Content .
+
+
+###  http://www.semanticweb.org/kass/ontologies/2020/0/home-activities-ontology#House_Zone
+home-activities-ontology:House_Zone rdf:type owl:Class ;
+                                    rdfs:subClassOf home-activities-ontology:Content .
+
+
+###  http://www.semanticweb.org/kass/ontologies/2020/0/home-activities-ontology#Kettle
+home-activities-ontology:Kettle rdf:type owl:Class ;
+                                rdfs:subClassOf home-activities-ontology:Prep_Tea_Object .
+
+
+###  http://www.semanticweb.org/kass/ontologies/2020/0/home-activities-ontology#Make_Phonecall
+home-activities-ontology:Make_Phonecall rdf:type owl:Class ;
+                                        rdfs:subClassOf home-activities-ontology:Activity .
+
+
+###  http://www.semanticweb.org/kass/ontologies/2020/0/home-activities-ontology#Make_Phonecall_Object
+home-activities-ontology:Make_Phonecall_Object rdf:type owl:Class ;
+                                               rdfs:subClassOf home-activities-ontology:House_Object .
+
+
+###  http://www.semanticweb.org/kass/ontologies/2020/0/home-activities-ontology#MedicationZone
+home-activities-ontology:MedicationZone rdf:type owl:Class ;
+                                        rdfs:subClassOf home-activities-ontology:House_Zone .
+
+
+###  http://www.semanticweb.org/kass/ontologies/2020/0/home-activities-ontology#Observation
+home-activities-ontology:Observation rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/kass/ontologies/2020/0/home-activities-ontology#Phone
+home-activities-ontology:Phone rdf:type owl:Class ;
+                               rdfs:subClassOf home-activities-ontology:Make_Phonecall_Object .
+
+
+###  http://www.semanticweb.org/kass/ontologies/2020/0/home-activities-ontology#Phone_Zone
+home-activities-ontology:Phone_Zone rdf:type owl:Class ;
+                                    rdfs:subClassOf home-activities-ontology:House_Zone .
+
+
+###  http://www.semanticweb.org/kass/ontologies/2020/0/home-activities-ontology#Phonecall_Action
+home-activities-ontology:Phonecall_Action rdf:type owl:Class ;
+                                          rdfs:subClassOf home-activities-ontology:Action .
+
+
+###  http://www.semanticweb.org/kass/ontologies/2020/0/home-activities-ontology#Pickup_Phone
+home-activities-ontology:Pickup_Phone rdf:type owl:Class ;
+                                      rdfs:subClassOf home-activities-ontology:Phonecall_Action .
+
+
+###  http://www.semanticweb.org/kass/ontologies/2020/0/home-activities-ontology#PillBox
+home-activities-ontology:PillBox rdf:type owl:Class ;
+                                 rdfs:subClassOf home-activities-ontology:Prep_Drugbox_Object .
+
+
+###  http://www.semanticweb.org/kass/ontologies/2020/0/home-activities-ontology#Prep_Drugbox_Action
+home-activities-ontology:Prep_Drugbox_Action rdf:type owl:Class ;
+                                             rdfs:subClassOf home-activities-ontology:Action .
+
+
+###  http://www.semanticweb.org/kass/ontologies/2020/0/home-activities-ontology#Prep_Drugbox_Object
+home-activities-ontology:Prep_Drugbox_Object rdf:type owl:Class ;
+                                             rdfs:subClassOf home-activities-ontology:House_Object .
+
+
+###  http://www.semanticweb.org/kass/ontologies/2020/0/home-activities-ontology#Prep_Tea_Object
+home-activities-ontology:Prep_Tea_Object rdf:type owl:Class ;
+                                         rdfs:subClassOf home-activities-ontology:House_Object .
+
+
+###  http://www.semanticweb.org/kass/ontologies/2020/0/home-activities-ontology#Prepare_DrugBox
+home-activities-ontology:Prepare_DrugBox rdf:type owl:Class ;
+                                         rdfs:subClassOf home-activities-ontology:Activity .
+
+
+###  http://www.semanticweb.org/kass/ontologies/2020/0/home-activities-ontology#Prepare_Hot_Tea
+home-activities-ontology:Prepare_Hot_Tea rdf:type owl:Class ;
+                                         rdfs:subClassOf home-activities-ontology:Activity .
+
+
+###  http://www.semanticweb.org/kass/ontologies/2020/0/home-activities-ontology#Sit
+home-activities-ontology:Sit rdf:type owl:Class ;
+                             rdfs:subClassOf home-activities-ontology:Action .
+
+
+###  http://www.semanticweb.org/kass/ontologies/2020/0/home-activities-ontology#Spoon
+home-activities-ontology:Spoon rdf:type owl:Class ;
+                               rdfs:subClassOf home-activities-ontology:Drink_Tea_Object .
+
+
+###  http://www.semanticweb.org/kass/ontologies/2020/0/home-activities-ontology#Sugar
+home-activities-ontology:Sugar rdf:type owl:Class ;
+                               rdfs:subClassOf home-activities-ontology:Prep_Tea_Object .
+
+
+###  http://www.semanticweb.org/kass/ontologies/2020/0/home-activities-ontology#Table_Zone
+home-activities-ontology:Table_Zone rdf:type owl:Class ;
+                                    rdfs:subClassOf home-activities-ontology:House_Zone .
+
+
+###  http://www.semanticweb.org/kass/ontologies/2020/0/home-activities-ontology#Talk
+home-activities-ontology:Talk rdf:type owl:Class ;
+                              rdfs:subClassOf home-activities-ontology:Phonecall_Action .
+
+
+###  http://www.semanticweb.org/kass/ontologies/2020/0/home-activities-ontology#Tea_Zone
+home-activities-ontology:Tea_Zone rdf:type owl:Class ;
+                                  rdfs:subClassOf home-activities-ontology:House_Zone .
+
+
+###  http://www.semanticweb.org/kass/ontologies/2020/0/home-activities-ontology#Teabag
+home-activities-ontology:Teabag rdf:type owl:Class ;
+                                rdfs:subClassOf home-activities-ontology:Prep_Tea_Object .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/kass/ontologies/2020/0/home-activities-ontology#Act_Drink_Tea_1
+home-activities-ontology:Act_Drink_Tea_1 rdf:type owl:NamedIndividual ,
+                                                  home-activities-ontology:Activity ;
+                                         home-activities-ontology:includes_obs home-activities-ontology:Obs_1_Drink_Tea ,
+                                                                               home-activities-ontology:Obs_2_Drink_Tea ,
+                                                                               home-activities-ontology:Obs_3_Drink_Tea ,
+                                                                               home-activities-ontology:Obs_4_Drink_Tea ;
+                                         home-activities-ontology:act_content "Drink Tea"^^xsd:string ;
+                                         home-activities-ontology:act_end_time "2014-05-05T18:41:53Z"^^xsd:dateTime ;
+                                         home-activities-ontology:act_start_time "2014-05-05T18:27:18Z"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/kass/ontologies/2020/0/home-activities-ontology#Act_Make_Phonecall_1
+home-activities-ontology:Act_Make_Phonecall_1 rdf:type owl:NamedIndividual ,
+                                                       home-activities-ontology:Activity ;
+                                              home-activities-ontology:includes_obs home-activities-ontology:Obs_1_Make_Phonecall ,
+                                                                                    home-activities-ontology:Obs_2_Make_Phonecall ,
+                                                                                    home-activities-ontology:Obs_3_Make_Phonecall ,
+                                                                                    home-activities-ontology:Obs_4_Make_PhoneCall ,
+                                                                                    home-activities-ontology:Obs_5_Make_PhoneCall ;
+                                              home-activities-ontology:act_content "Make Phone Call"^^xsd:string ;
+                                              home-activities-ontology:act_end_time "2014-05-05T18:27:34Z"^^xsd:dateTime ;
+                                              home-activities-ontology:act_start_time "2014-05-05T18:18:43Z"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/kass/ontologies/2020/0/home-activities-ontology#Act_Prep_Tea_1
+home-activities-ontology:Act_Prep_Tea_1 rdf:type owl:NamedIndividual ,
+                                                 home-activities-ontology:Activity ;
+                                        home-activities-ontology:includes_obs home-activities-ontology:Obs_1_Prep_Tea ,
+                                                                              home-activities-ontology:Obs_2_Prep_Tea ,
+                                                                              home-activities-ontology:Obs_3_Prep_Tea ,
+                                                                              home-activities-ontology:Obs_4_Prep_Tea ,
+                                                                              home-activities-ontology:Obs_5_Prep_Tea ,
+                                                                              home-activities-ontology:Obs_6_Prep_Tea ,
+                                                                              home-activities-ontology:Obs_7_Prep_Tea ,
+                                                                              home-activities-ontology:Obs_8_Prep_Tea ,
+                                                                              home-activities-ontology:Obs_9_Prep_Tea ;
+                                        home-activities-ontology:act_content "Prepare Tea"^^xsd:string ;
+                                        home-activities-ontology:act_end_time "2014-05-05T18:17:30Z"^^xsd:dateTimeStamp ;
+                                        home-activities-ontology:act_start_time "2014-05-05T18:10:50Z"^^xsd:dateTimeStamp .
+
+
+###  http://www.semanticweb.org/kass/ontologies/2020/0/home-activities-ontology#Cup_1
+home-activities-ontology:Cup_1 rdf:type owl:NamedIndividual ,
+                                        home-activities-ontology:Cup .
+
+
+###  http://www.semanticweb.org/kass/ontologies/2020/0/home-activities-ontology#Kettle_1
+home-activities-ontology:Kettle_1 rdf:type owl:NamedIndividual ,
+                                           home-activities-ontology:Kettle .
+
+
+###  http://www.semanticweb.org/kass/ontologies/2020/0/home-activities-ontology#Obs_1_Drink_Tea
+home-activities-ontology:Obs_1_Drink_Tea rdf:type owl:NamedIndividual ,
+                                                  home-activities-ontology:Observation ;
+                                         home-activities-ontology:has_object home-activities-ontology:Cup_1 ;
+                                         home-activities-ontology:obs_content "Cup"^^xsd:string ;
+                                         home-activities-ontology:obs_end_time "2014-05-05T18:35:15Z"^^xsd:dateTime ;
+                                         home-activities-ontology:obs_start_time "2014-05-05T18:34:54Z"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/kass/ontologies/2020/0/home-activities-ontology#Obs_1_Make_Phonecall
+home-activities-ontology:Obs_1_Make_Phonecall rdf:type owl:NamedIndividual ,
+                                                       home-activities-ontology:Observation ;
+                                              home-activities-ontology:has_object home-activities-ontology:Phone_1 ;
+                                              home-activities-ontology:obs_content "Phone"^^xsd:string ;
+                                              home-activities-ontology:obs_end_time "2014-05-05T18:21:15Z"^^xsd:dateTime ;
+                                              home-activities-ontology:obs_start_time "2014-05-05T18:20:53Z"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/kass/ontologies/2020/0/home-activities-ontology#Obs_1_Prep_Tea
+home-activities-ontology:Obs_1_Prep_Tea rdf:type owl:NamedIndividual ,
+                                                 home-activities-ontology:Observation ;
+                                        home-activities-ontology:has_object home-activities-ontology:Sugar_1 ;
+                                        home-activities-ontology:obs_content "Sugar"^^xsd:string ;
+                                        home-activities-ontology:obs_end_time "2014-05-05T18:14:54Z"^^xsd:dateTime ;
+                                        home-activities-ontology:obs_start_time "2014-05-05T18:14:27Z"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/kass/ontologies/2020/0/home-activities-ontology#Obs_2_Drink_Tea
+home-activities-ontology:Obs_2_Drink_Tea rdf:type owl:NamedIndividual ,
+                                                  home-activities-ontology:Observation ;
+                                         home-activities-ontology:has_object home-activities-ontology:Spoon_2 ;
+                                         home-activities-ontology:obs_content "Spoon"^^xsd:string ;
+                                         home-activities-ontology:obs_end_time "2014-05-05T18:27:46Z"^^xsd:dateTime ;
+                                         home-activities-ontology:obs_start_time "2014-05-05T18:27:18Z"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/kass/ontologies/2020/0/home-activities-ontology#Obs_2_Make_Phonecall
+home-activities-ontology:Obs_2_Make_Phonecall rdf:type owl:NamedIndividual ;
+                                              home-activities-ontology:has_zone home-activities-ontology:Phonezone_1 ;
+                                              home-activities-ontology:obs_content "Phonezone"^^xsd:string ;
+                                              home-activities-ontology:obs_end_time "2014-05-05T18:24:34Z"^^xsd:dateTime ;
+                                              home-activities-ontology:obs_start_time "2014-05-05T18:24:13Z"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/kass/ontologies/2020/0/home-activities-ontology#Obs_2_Prep_Tea
+home-activities-ontology:Obs_2_Prep_Tea rdf:type owl:NamedIndividual ,
+                                                 home-activities-ontology:Observation ;
+                                        home-activities-ontology:has_object home-activities-ontology:Teabag_1 ;
+                                        home-activities-ontology:obs_content "Teabag"^^xsd:string ;
+                                        home-activities-ontology:obs_end_time "2014-05-05T18:16:56Z"^^xsd:dateTime ;
+                                        home-activities-ontology:obs_start_time "2014-05-05T18:16:35Z"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/kass/ontologies/2020/0/home-activities-ontology#Obs_3_Drink_Tea
+home-activities-ontology:Obs_3_Drink_Tea rdf:type owl:NamedIndividual ,
+                                                  home-activities-ontology:Observation ;
+                                         home-activities-ontology:has_zone home-activities-ontology:Teazone_1 ;
+                                         home-activities-ontology:obs_content "Teazone"^^xsd:string ;
+                                         home-activities-ontology:obs_end_time "2014-05-05T18:36:53Z"^^xsd:dateTime ;
+                                         home-activities-ontology:obs_start_time "2014-05-05T18:36:28Z"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/kass/ontologies/2020/0/home-activities-ontology#Obs_3_Make_Phonecall
+home-activities-ontology:Obs_3_Make_Phonecall rdf:type owl:NamedIndividual ,
+                                                       home-activities-ontology:Observation ;
+                                              home-activities-ontology:has_action home-activities-ontology:Talk_1 ;
+                                              home-activities-ontology:obs_content "Talk"^^xsd:string ;
+                                              home-activities-ontology:obs_end_time "2014-05-05T18:19:06Z"^^xsd:dateTime ;
+                                              home-activities-ontology:obs_start_time "2014-05-05T18:18:43Z"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/kass/ontologies/2020/0/home-activities-ontology#Obs_3_Prep_Tea
+home-activities-ontology:Obs_3_Prep_Tea rdf:type owl:NamedIndividual ,
+                                                 home-activities-ontology:Observation ;
+                                        home-activities-ontology:has_object home-activities-ontology:Teabag_1 ;
+                                        home-activities-ontology:obs_content "Teabag"^^xsd:string ;
+                                        home-activities-ontology:obs_end_time "2014-05-05T18:16:07Z"^^xsd:dateTime ;
+                                        home-activities-ontology:obs_start_time "2014-05-05T18:15:41Z"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/kass/ontologies/2020/0/home-activities-ontology#Obs_4_Drink_Tea
+home-activities-ontology:Obs_4_Drink_Tea rdf:type owl:NamedIndividual ,
+                                                  home-activities-ontology:Observation ;
+                                         home-activities-ontology:has_action home-activities-ontology:Sit_1 ;
+                                         home-activities-ontology:obs_content "Sit"^^xsd:string ;
+                                         home-activities-ontology:obs_end_time "2014-05-05T18:29:07Z"^^xsd:dateTime ;
+                                         home-activities-ontology:obs_start_time "2014-05-05T18:28:47Z"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/kass/ontologies/2020/0/home-activities-ontology#Obs_4_Make_PhoneCall
+home-activities-ontology:Obs_4_Make_PhoneCall rdf:type owl:NamedIndividual ,
+                                                       home-activities-ontology:Observation ;
+                                              home-activities-ontology:has_action home-activities-ontology:Pickup_Phone_1 ;
+                                              home-activities-ontology:obs_content "Pickup Phone"^^xsd:string ;
+                                              home-activities-ontology:obs_end_time "2014-05-05T18:22:30Z"^^xsd:dateTime ;
+                                              home-activities-ontology:obs_start_time "2014-05-05T18:22:02Z"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/kass/ontologies/2020/0/home-activities-ontology#Obs_4_Prep_Tea
+home-activities-ontology:Obs_4_Prep_Tea rdf:type owl:NamedIndividual ,
+                                                 home-activities-ontology:Observation ;
+                                        home-activities-ontology:has_object home-activities-ontology:Kettle_1 ;
+                                        home-activities-ontology:obs_content "Kettle"^^xsd:string ;
+                                        home-activities-ontology:obs_end_time "2014-05-05T18:11:19Z"^^xsd:dateTime ;
+                                        home-activities-ontology:obs_start_time "2014-05-05T18:10:50Z"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/kass/ontologies/2020/0/home-activities-ontology#Obs_5_Make_PhoneCall
+home-activities-ontology:Obs_5_Make_PhoneCall rdf:type owl:NamedIndividual ,
+                                                       home-activities-ontology:Observation ;
+                                              home-activities-ontology:obs_content "Phonezone"^^xsd:string ;
+                                              home-activities-ontology:obs_end_time "2014-05-05T18:27:46Z"^^xsd:dateTime ;
+                                              home-activities-ontology:obs_start_time "2014-05-05T18:27:18Z"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/kass/ontologies/2020/0/home-activities-ontology#Obs_5_Prep_Tea
+home-activities-ontology:Obs_5_Prep_Tea rdf:type owl:NamedIndividual ,
+                                                 home-activities-ontology:Observation ;
+                                        home-activities-ontology:has_object home-activities-ontology:Kettle_1 ;
+                                        home-activities-ontology:obs_content "Kettle"^^xsd:string ;
+                                        home-activities-ontology:obs_end_time "2014-05-05T18:17:30Z"^^xsd:dateTime ;
+                                        home-activities-ontology:obs_start_time "2014-05-05T18:17:01Z"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/kass/ontologies/2020/0/home-activities-ontology#Obs_6_Prep_Tea
+home-activities-ontology:Obs_6_Prep_Tea rdf:type owl:NamedIndividual ,
+                                                 home-activities-ontology:Observation ;
+                                        home-activities-ontology:has_object home-activities-ontology:Kettle_1 ;
+                                        home-activities-ontology:obs_content "Kettle"^^xsd:string ;
+                                        home-activities-ontology:obs_end_time "2014-05-05T18:13:27Z"^^xsd:dateTime ;
+                                        home-activities-ontology:obs_start_time "2014-05-05T18:13:05Z"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/kass/ontologies/2020/0/home-activities-ontology#Obs_7_Prep_Tea
+home-activities-ontology:Obs_7_Prep_Tea rdf:type owl:NamedIndividual ,
+                                                 home-activities-ontology:Observation ;
+                                        home-activities-ontology:has_object home-activities-ontology:Sugar_1 ;
+                                        home-activities-ontology:obs_content "Sugar"^^xsd:string ;
+                                        home-activities-ontology:obs_end_time "2014-05-05T18:14:02Z"^^xsd:dateTime ;
+                                        home-activities-ontology:obs_start_time "2014-05-05T18:13:38Z"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/kass/ontologies/2020/0/home-activities-ontology#Obs_8_Prep_Tea
+home-activities-ontology:Obs_8_Prep_Tea rdf:type owl:NamedIndividual ,
+                                                 home-activities-ontology:Observation ;
+                                        home-activities-ontology:has_zone home-activities-ontology:Teazone_1 ;
+                                        home-activities-ontology:obs_content "Teazone"^^xsd:string ;
+                                        home-activities-ontology:obs_end_time "2014-05-05T18:12:31Z"^^xsd:dateTime ;
+                                        home-activities-ontology:obs_start_time "2014-05-05T18:12:09Z"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/kass/ontologies/2020/0/home-activities-ontology#Obs_9_Prep_Tea
+home-activities-ontology:Obs_9_Prep_Tea rdf:type owl:NamedIndividual ,
+                                                 home-activities-ontology:Observation ;
+                                        home-activities-ontology:has_zone home-activities-ontology:Teazone_1 ;
+                                        home-activities-ontology:obs_content "Teazone"^^xsd:string ;
+                                        home-activities-ontology:obs_end_time "2014-05-05T18:12:37Z"^^xsd:dateTime ;
+                                        home-activities-ontology:obs_start_time "2014-05-05T18:12:15Z"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/kass/ontologies/2020/0/home-activities-ontology#Phone_1
+home-activities-ontology:Phone_1 rdf:type owl:NamedIndividual ,
+                                          home-activities-ontology:Phone .
+
+
+###  http://www.semanticweb.org/kass/ontologies/2020/0/home-activities-ontology#Phonezone_1
+home-activities-ontology:Phonezone_1 rdf:type owl:NamedIndividual ,
+                                              home-activities-ontology:Phone_Zone .
+
+
+###  http://www.semanticweb.org/kass/ontologies/2020/0/home-activities-ontology#Pickup_Phone_1
+home-activities-ontology:Pickup_Phone_1 rdf:type owl:NamedIndividual ,
+                                                 home-activities-ontology:Phonecall_Action .
+
+
+###  http://www.semanticweb.org/kass/ontologies/2020/0/home-activities-ontology#Sit_1
+home-activities-ontology:Sit_1 rdf:type owl:NamedIndividual ,
+                                        home-activities-ontology:Sit .
+
+
+###  http://www.semanticweb.org/kass/ontologies/2020/0/home-activities-ontology#Spoon_1
+home-activities-ontology:Spoon_1 rdf:type owl:NamedIndividual ,
+                                          home-activities-ontology:Spoon .
+
+
+###  http://www.semanticweb.org/kass/ontologies/2020/0/home-activities-ontology#Spoon_2
+home-activities-ontology:Spoon_2 rdf:type owl:NamedIndividual ,
+                                          home-activities-ontology:Spoon .
+
+
+###  http://www.semanticweb.org/kass/ontologies/2020/0/home-activities-ontology#Sugar_1
+home-activities-ontology:Sugar_1 rdf:type owl:NamedIndividual ,
+                                          home-activities-ontology:Sugar .
+
+
+###  http://www.semanticweb.org/kass/ontologies/2020/0/home-activities-ontology#Talk_1
+home-activities-ontology:Talk_1 rdf:type owl:NamedIndividual ,
+                                         home-activities-ontology:Phonecall_Action .
+
+
+###  http://www.semanticweb.org/kass/ontologies/2020/0/home-activities-ontology#Teabag_1
+home-activities-ontology:Teabag_1 rdf:type owl:NamedIndividual ,
+                                           home-activities-ontology:Teabag .
+
+
+###  http://www.semanticweb.org/kass/ontologies/2020/0/home-activities-ontology#Teazone_1
+home-activities-ontology:Teazone_1 rdf:type owl:NamedIndividual ,
+                                            home-activities-ontology:Tea_Zone .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
